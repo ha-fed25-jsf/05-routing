@@ -1,6 +1,9 @@
-import { useParams, useLoaderData, Link } from "react-router"
+import { useParams, useLoaderData, useNavigate, Link } from "react-router"
 
 const Details = () => {
+	// Används för att backa när användaren klickar på länken "tillbaka"
+	const navigate = useNavigate()
+
 	// Eftersom det står path: '/products/:id' i routes.jsx,
 	// betraktas "id" som en URL-parameter
 	// och vi kan hämta den med useParams
@@ -19,14 +22,18 @@ const Details = () => {
 		return <div className="details"> Kunde inte visa produkten. </div>
 	}
 
-	// TODO: backa till listan
+	const goBack = event => {
+		event.preventDefault()
+		navigate(-1)
+	}
+
 	return (
 		<div className="details">
 			<h3> {item.name} </h3>
 			<p> {item.price} kr </p>
 			<p> Här skulle mer information om produkten stått... </p>
-			<p> TODO: länk som backar tillbaka till produktlistan </p>
-			{/* använd navigate(-1) för att backa! */}
+			<p> <a href="/products" onClick={goBack}> Tillbaka till produkterna </a> </p>
+
 		</div>
 	)
 }
