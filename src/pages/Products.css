@@ -15,4 +15,8 @@
 		text-align: center;
 		background-color: var(--main-bg-alternate);
 	}
+
+	.search {
+		margin-bottom: 1em;
+	}
 }
