@@ -4,7 +4,7 @@ const About = () => {
 
 	return (
 		<div>
-			<h2> Grönsakerna </h2>
+			<h2> Om oss </h2>
 			<p> Vi är ett grönt kooperativ som köper och säljer ekologiska grönsaker. Och vissa frukter! (tomat) </p>
 		</div>
 	)

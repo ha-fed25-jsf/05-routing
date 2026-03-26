@@ -20,6 +20,12 @@
 				&:hover {
 					box-shadow: 0 0 0.2em 0.3em rgb(89, 124, 228);
 				}
+
+				&.active {
+					/* background-color: purple; */
+					background-color: rgb(89, 124, 228);
+					color: white;
+				}
 			}
 		}
 

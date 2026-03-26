@@ -1,4 +1,4 @@
-import { Outlet, Link } from 'react-router'
+import { Outlet, NavLink } from 'react-router'
 import './Root.css'
 
 // Första komponenten som routas - visas alltid. Se routes.jsx
@@ -9,12 +9,13 @@ function Root() {
 		<div className="app">
 			<header>
 				<h1> 🥬Grönsakerna🥬 </h1>
-				<div className="row nav-links">
-					<Link to="/"> Start </Link>
-					<Link to="/about"> Om oss </Link>
-
-				</div>
+				<nav className="row nav-links">
+					<NavLink to="/"> Start </NavLink>
+					<NavLink to="/about"> Om oss </NavLink>
+					<NavLink to="/products"> Varor </NavLink>
+				</nav>
 			</header>
+
 			<main>
 				<Outlet />
 			</main>
