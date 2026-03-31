@@ -34,7 +34,8 @@ const Details = () => {
 		<div className="details">
 			<h3> {item.name} </h3>
 			<p> {item.price} kr </p>
-			<p> Här skulle mer information om produkten stått... </p>
+			<p> {item.blurb} </p>
+			<p> {item.description} </p>
 			<p> <a href="/products" onClick={goBack}> Tillbaka till produkterna </a> </p>
 
 		</div>
