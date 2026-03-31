@@ -3,10 +3,15 @@ import { useLoaderData } from 'react-router'
 import './Products.css'
 import ProductItem from '../components/ProductItem'
 import { match } from '../data/utils.js'
+import { useStore } from '../data/store.js'
 
 const Products = () => {
+	/* Hämta data alterantiv 1: använd loader-funktion i router-konfigurationen
 	// useLoaderData returnerar data av samma typ som loader-funktionen returnerar
 	const vegetables = useLoaderData()
+	*/
+	// Alternativ 2: lagra datan i store, använd selector-funktion för att hämta ut den
+	const vegetables = useStore(state => state.vegetables)
 	const [searchText, setSearchText] = useState('')
 
 	const calculateValue = () => searchText === '' ? vegetables : vegetables.filter(v => match(searchText, v.name))

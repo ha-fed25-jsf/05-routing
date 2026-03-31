@@ -16,17 +16,18 @@ export const routes = [
 
 			{
 				path: '/products',
+				Component: Products,
+				/* eftersom vi bytte till Zustand, behöver vi inte någon loader längre
 				loader: async () => {
 					// Eftersom datan finns i en fil, kan vi importera den direkt. Om datan kommer från ett API kan vi använda fetch i stället.
 					return vegetables
-				},
-				Component: Products
+				},*/
 			},
 
 			{
 				path: '/products/:id',
-				loader: async () => vegetables,
-				Component: Details
+				Component: Details,
+				// loader: async () => vegetables,
 			},
 		]
 	}
