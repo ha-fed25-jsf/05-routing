@@ -2,7 +2,7 @@ import { useState, useMemo } from 'react'
 import { useLoaderData } from 'react-router'
 import './Products.css'
 import ProductItem from '../components/ProductItem'
-import { match } from '../data/utils.js'
+import { fuzzyMatch } from '../data/utils.js'
 import { useStore } from '../data/store.js'
 
 const Products = () => {
@@ -14,7 +14,9 @@ const Products = () => {
 	const vegetables = useStore(state => state.vegetables)
 	const [searchText, setSearchText] = useState('')
 
-	const calculateValue = () => searchText === '' ? vegetables : vegetables.filter(v => match(searchText, v.name))
+	// Enkel sökning
+	// const calculateValue = () => searchText === '' ? vegetables : vegetables.filter(v => match(searchText, v.name))
+	const calculateValue  =() => searchText === '' ? vegetables : fuzzyMatch(searchText)
 
 	const matchingVeggies = useMemo(
 		calculateValue,
